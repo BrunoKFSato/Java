@@ -16,7 +16,8 @@ public class RestoDivisao {
                valorTotal = y;
                primeiro = false;
             } else if (y == 0) {
-               System.out.println("Impossível realizar divisões com 0");
+               System.err.println("\nImpossível realizar divisões com 0");
+               return;
             } else {
                valorTotal = valorTotal % y;
             }

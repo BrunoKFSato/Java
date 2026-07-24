@@ -16,7 +16,9 @@ public class Divisao {
                valorTotal = y;
                primeiro = false;
             } else if (y == 0) {
-               System.out.println("Impossível realizar divisões com 0");
+               System.err.println("\nImpossível realizar divisões com 0");
+               continuar = false;
+               return;
             } else {
                valorTotal /= y;
             }

@@ -1,11 +1,12 @@
+package calculadora;
 import java.util.Scanner;
 
-public class Subtracao {
+public class RestoDivisao {
    public static void executar(Scanner leitor) {
       double valorTotal = 0;
       boolean continuar = true;
       boolean primeiro = true;
-      System.out.println("Digite números para subtrair (digite FIM para encerrar): ");
+      System.out.println("Digite números para dividir (digite FIM para encerrar): ");
       while (continuar) {
          String entrada = leitor.next();
          if (entrada.equalsIgnoreCase("FIM")) {
@@ -15,8 +16,11 @@ public class Subtracao {
             if (primeiro) {
                valorTotal = y;
                primeiro = false;
+            } else if (y == 0) {
+               System.err.println("\nImpossível realizar divisões com 0");
+               return;
             } else {
-               valorTotal -= y;
+               valorTotal = valorTotal % y;
             }
          }
       }

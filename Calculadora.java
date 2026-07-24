@@ -5,7 +5,7 @@ public class Calculadora {
       Scanner leitor = new Scanner(System.in);
       boolean loop = true;
 
-      while (loop) {
+      do {
          System.out.println("\nEscolha sua opção no menu:\n");
          System.out.println("1-Soma\n2-Subtração\n3-Multiplicação\n4-Divisão\n5-Resto da Divisão\n6-Exponenciação\n7-Sair");
          int escolha = leitor.nextInt();
@@ -27,6 +27,7 @@ public class Calculadora {
                break;
             case 6:
                Exponenciacao.executar(leitor);
+               break;
             case 7:
                loop = false;
                break;
@@ -36,6 +37,7 @@ public class Calculadora {
                break;
          }
       }
+      while(loop);
       leitor.close();
 
    }

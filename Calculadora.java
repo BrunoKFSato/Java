@@ -8,7 +8,7 @@ public class Calculadora {
 
       while (loop) {
          System.out.println("\nEscolha sua opção no menu:\n");
-         System.out.println("1-Soma\n2-Subtração\n3-Multiplicação\n4-Divisão\n5-Sair\n");
+         System.out.println("1-Soma\n2-Subtração\n3-Multiplicação\n4-Divisão\n5-Resto da Divisão\n6-Sair\n");
          int escolha = leitor.nextInt();
          switch (escolha) {
             case 1:
@@ -24,6 +24,9 @@ public class Calculadora {
                Divisao.executar(leitor);
                break;
             case 5:
+               RestoDivisao.executar(leitor);
+               break;
+            case 6:
                loop = false;
                break;
             default:

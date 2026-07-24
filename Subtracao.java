@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class Subtracao {
+   public static void executar(Scanner leitor) {
+      double valorTotal = 0;
+      boolean continuar = true;
+      boolean primeiro = true;
+      System.out.println("Digite números para subtrair (digite FIM para encerrar): ");
+      while (continuar) {
+         String entrada = leitor.next();
+         if (entrada.equalsIgnoreCase("FIM")) {
+            continuar = false;
+         } else {
+            double y = Double.parseDouble(entrada);
+            if (primeiro) {
+               valorTotal = y;
+               primeiro = false;
+            } else {
+               valorTotal -= y;
+            }
+         }
+      }
+      System.out.println("\nO resultado eh de " + valorTotal);
+   }
+}

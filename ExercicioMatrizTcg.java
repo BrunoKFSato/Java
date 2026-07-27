@@ -1,3 +1,4 @@
+
 public class ExercicioMatrizTcg {
     public static void main(String[] args) {
 
@@ -24,21 +25,32 @@ public class ExercicioMatrizTcg {
         for (int i = 0; i < matchups.length; i++) {
             for (int j = 0; j < matchups[i].length; j++) {
                 if (j % matchups.length == 0) {
-                    System.out.printf("%-20s","" + decks[i]);
+                    System.out.printf("%-20s", "" + decks[i]);
                     System.out.print(":");
 
                 }
                 System.out.print("\t" + matchups[i][j]);
                 q++;
                 if (q % 5 == 0) {
-                    System.out.println("");
+                    System.out.println(" ");
                 }
             }
         }
-        System.err.println("\n\n\n\n\n");
+
+        System.out.println("\n\n");
+        for (int z = 0; z < decks.length; z++) {
+            System.out.printf("%-20s%3d%n", decks[z], totalVitorias(matchups, z));
+          
+        }
     }
 
-    public static int totalVitorias (int[][] matchups, int deck){
-        
+    static int totalVitorias(int[][] matchups, int deck) {
+        int soma = 0;
+        for (int i = 0; i < matchups.length; i++) {
+            soma = soma + matchups[deck][i];
+
+        }
+        return soma;
     }
+
 }

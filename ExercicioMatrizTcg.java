@@ -44,7 +44,7 @@ public class ExercicioMatrizTcg {
         }
     }
 
-    static int totalVitorias(int[][] matchups, int deck) {
+    public static int totalVitorias(int[][] matchups, int deck) {
         int soma = 0;
         for (int i = 0; i < matchups.length; i++) {
             soma = soma + matchups[deck][i];
@@ -52,5 +52,16 @@ public class ExercicioMatrizTcg {
         }
         return soma;
     }
+
+    public static void melhorDeck(int[][] matchups){ //trocar o void por int
+        int maiorvitoria =0;
+        for (int i = 0; i < matchups.length; i++) {
+            if (totalVitorias(matchups, i)>maiorvitoria){
+            maiorvitoria=totalVitorias(matchups, i);
+            }
+            
+        }
+    }
+
 
 }

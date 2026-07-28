@@ -40,28 +40,56 @@ public class ExercicioMatrizTcg {
         System.out.println("\n\n");
         for (int z = 0; z < decks.length; z++) {
             System.out.printf("%-20s%3d%n", decks[z], totalVitorias(matchups, z));
-          
         }
+        System.out.println("O deck com maior vitórias é o " + decks[melhorDeck(matchups)]);
+        System.out.println("O maior numero de vitorias batido foi de " + descobrirMaximo(matchups));
     }
 
     public static int totalVitorias(int[][] matchups, int deck) {
         int soma = 0;
         for (int i = 0; i < matchups.length; i++) {
             soma = soma + matchups[deck][i];
-
         }
+        
+        
         return soma;
     }
 
-    public static void melhorDeck(int[][] matchups){ //trocar o void por int
-        int maiorvitoria =0;
+    public static int melhorDeck(int[][] matchups) {
+        int maiorvitoriatemp = 0;
+        int maiorvitoriadef = 0;
+        int resposta = 0;
         for (int i = 0; i < matchups.length; i++) {
-            if (totalVitorias(matchups, i)>maiorvitoria){
-            maiorvitoria=totalVitorias(matchups, i);
+            for (int j = 0; j < matchups[i].length; j++) {
+                maiorvitoriatemp = maiorvitoriatemp + matchups[i][j];
             }
-            
+            if (maiorvitoriadef < maiorvitoriatemp) {
+                maiorvitoriadef = maiorvitoriatemp;
+                resposta = i;
+
+            }
+            maiorvitoriatemp = 0;
+
         }
+
+        return resposta;
     }
 
+public static int descobrirMaximo(int[][] matchups) {
+    int maiorvitoriatemp = 0;
+        int maiorvitoriadef = 0;
+        
+        for (int i = 0; i < matchups.length; i++) {
+            for (int j = 0; j < matchups[i].length; j++) {
+                maiorvitoriatemp = maiorvitoriatemp + matchups[i][j];
+            }
+            if (maiorvitoriadef < maiorvitoriatemp) {
+                maiorvitoriadef = maiorvitoriatemp;
+            }
+            maiorvitoriatemp=0;
+        }
+    return maiorvitoriadef;
+}
 
+    
 }

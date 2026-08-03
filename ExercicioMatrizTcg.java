@@ -50,8 +50,7 @@ public class ExercicioMatrizTcg {
         for (int i = 0; i < matchups.length; i++) {
             soma = soma + matchups[deck][i];
         }
-        
-        
+
         return soma;
     }
 
@@ -75,10 +74,10 @@ public class ExercicioMatrizTcg {
         return resposta;
     }
 
-public static int descobrirMaximo(int[][] matchups) {
-    int maiorvitoriatemp = 0;
+    public static int descobrirMaximo(int[][] matchups) {
+        int maiorvitoriatemp = 0;
         int maiorvitoriadef = 0;
-        
+
         for (int i = 0; i < matchups.length; i++) {
             for (int j = 0; j < matchups[i].length; j++) {
                 maiorvitoriatemp = maiorvitoriatemp + matchups[i][j];
@@ -86,10 +85,8 @@ public static int descobrirMaximo(int[][] matchups) {
             if (maiorvitoriadef < maiorvitoriatemp) {
                 maiorvitoriadef = maiorvitoriatemp;
             }
-            maiorvitoriatemp=0;
+            maiorvitoriatemp = 0;
         }
-    return maiorvitoriadef;
-}
-
-    
+        return maiorvitoriadef;
+    }
 }
